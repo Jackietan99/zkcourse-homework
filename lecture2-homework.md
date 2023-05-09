@@ -5,7 +5,7 @@
 
 ## 第1题： 转换为bit位Num2Bits
 
-```
+```rust
 pragma circom 2.1.4;
 
 
@@ -54,7 +54,7 @@ component main = Main();
 ## 第2题： 判零 IsZero
 
 
-```
+```rust
 
 template IsZero() {
     signal input in;
@@ -74,6 +74,19 @@ template IsZero() {
 
 ## 第3题： 相等 IsEqual
 
+``` rust 
+
+template IsEqual() {
+    signal input in[2];
+    signal output out;
+
+    component isz = IsZero();
+
+    in[1] - in[0] ==> isz.in;
+
+    isz.out ==> out;
+}
+```
 
 
 ## 第4题： 少于 LessThan
