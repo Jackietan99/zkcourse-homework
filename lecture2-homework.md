@@ -6,6 +6,9 @@
 ## 第1题： 转换为bit位Num2Bits
 
 ```rust
+pragma circom 2.1.4;
+
+
 template Num2Bits(n) {
 
     var res = 0;
@@ -29,6 +32,23 @@ template Num2Bits(n) {
     
     res === in;
 }
+
+template Main () {
+    signal input in;
+    signal output o;
+
+    component n2b = Num2Bits(4);
+    n2b.in <== in;
+
+    o <== n2b.out[0];
+}
+
+component main = Main();
+
+/* INPUT = {
+    "in": "11"
+} */
+
 ```
 
 ## 第2题： 判零 IsZero
