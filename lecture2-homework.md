@@ -5,7 +5,7 @@
 
 ## 第1题： 转换为bit位Num2Bits
 
-```rust
+```
 pragma circom 2.1.4;
 
 
@@ -52,6 +52,23 @@ component main = Main();
 ```
 
 ## 第2题： 判零 IsZero
+
+
+```
+
+template IsZero() {
+    signal input in;
+    signal output out;
+
+    signal inv;
+
+    inv <-- in!=0 ? 1/in : 0;
+
+    out <== -in*inv +1;
+    in*out === 0;
+}
+
+```
 
 
 
