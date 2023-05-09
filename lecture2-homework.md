@@ -5,7 +5,7 @@
 
 ## 第1题： 转换为bit位Num2Bits
 
-
+```rust
 template Num2Bits(n) {
 
     var res = 0;
@@ -29,7 +29,7 @@ template Num2Bits(n) {
     
     res === in;
 }
-
+```
 
 ## 第2题： 判零 IsZero
 
