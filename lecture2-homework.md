@@ -91,6 +91,46 @@ template IsEqual() {
 
 ## 第4题： 选择器 Selector
 
+``` rust
+
+template Sum(n) {
+    signal input in[n];
+    signal output out;
+
+    signal sums[n];
+
+    sums[0] <== in[0];
+
+    for (var i = 1; i < n; i++) {
+        sums[i] <== sums[i-1] + in[i];
+    }
+
+    out <== sums[n-1];
+}
+
+template Selector(choices) {
+    signal input in[choices];
+    signal input index;
+    signal output out;
+    
+    component lessThan = LessThan(4);
+    lessThan.in[0] <== index;
+    lessThan.in[1] <== choices;
+    lessThan.out === 1;
+
+    component sum = Sum(choices);
+    component eqs[choices];
+
+    for (var i = 0; i < choices; i ++) {
+        eqs[i] = IsEqual();
+        eqs[i].in[0] <== i;
+        eqs[i].in[1] <== index;
+        sum.in[i] <== eqs[i].out * in[i];
+    }
+    out <== sum.out;
+}
+```
+
 
 
 ## 第5题：判负 IsNegative
