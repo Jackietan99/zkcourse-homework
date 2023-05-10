@@ -89,10 +89,19 @@ template IsEqual() {
 ```
 
 
-## 第4题： 少于 LessThan
+## 第4题： 选择器 Selector
 
 
 
-## 第5题： 选择器 Selector
+## 第5题：判负 IsNegative
 
+
+
+## 第6题：少于 LessThan  
+
+
+## 第7题： 整数除法 IntegerDivide
+
+
+## 第8题:排序 Sort
 
