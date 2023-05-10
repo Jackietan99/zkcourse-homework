@@ -99,6 +99,20 @@ template IsEqual() {
 
 ## 第6题：少于 LessThan  
 
+``` rust
+template LessThan (n) {
+    signal input in[2];
+    signal output out;
+
+    assert(n < 252);
+
+    component n2b = Num2Bit(n+1);
+    n2b.in <== in[0] + (1<<n) - in[1];
+
+    out <== 1 - n2b.b[n];
+}
+```
+
 
 ## 第7题： 整数除法 IntegerDivide
 
