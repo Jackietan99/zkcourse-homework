@@ -5,6 +5,8 @@
 
 ## 第1题 二次非剩余 Quadratic nonresidue
 
+P返回 永远是正确答案，V永远会接受。
+
 
 ## 第2题 二次剩余 Quadratic residue *(ToDo)*
 
